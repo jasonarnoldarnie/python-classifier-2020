@@ -32,8 +32,7 @@ get_ecg_info(hdr)
 ecg = Ecg(name, leads)
 ecg.to_string()
 
-visualise.add_leads()
+# visualise.plot_twelve_lead(rec)
+visualise.plot_lead_single(rec, "V2")
 
-data = pd.DataFrame(rec[1])
-data.plot()
 plt.show()
