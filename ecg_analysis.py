@@ -33,6 +33,6 @@ ecg = Ecg(name, leads)
 ecg.to_string()
 
 # visualise.plot_twelve_lead(rec)
-visualise.plot_lead_single(rec, "V2")
+visualise.plot_lead_single(rec, "II")
 
 plt.show()

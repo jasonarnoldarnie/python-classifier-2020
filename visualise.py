@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
-
-
-
+from qrs_detection import Detectors
+qrs = Detectors(500)
 
 lead_names = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6']
 leads = dict.fromkeys(lead_names)  # Dictionary of lead names and corresponding axes
@@ -33,4 +32,6 @@ def plot_lead_single(data, lead_name):
     ax = single_lead.add_axes([0.1, 0.1, 0.8, 0.8])
     ax.set_title(lead_name)
     ax.plot(data[lead_names.index(lead_name)])
+    qrs.pan_tompkins(data[lead_names.index(lead_name)])
+
 
